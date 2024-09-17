@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f4ff;
+    color: #333;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* Header dan navbar styling */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10; /* Pastikan menu toggle berada di atas elemen lain */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Styling untuk nav-links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh; /* Menyediakan tinggi penuh tanpa scroll di desktop */
+    position: relative;
+    overflow: hidden; /* Mencegah scroll di dalam hero */
+}
+
+.hero-content {
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px; /* Memberikan jarak atas pada teks body */
+}
+
+.wave {
+    animation: wave-animation 2s infinite;
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hero-image {
+    position: relative;
+}
+
+.animated-image {
+    max-width: 100%;
+    height: auto;
+    animation: moveAnimation 5s infinite alternate ease-in-out;
+}
+
+@keyframes moveAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: fixed; /* Menggunakan fixed positioning untuk navbar mobile */
+        top: 70px; /* Sesuaikan top agar tidak menutup elemen lain */
+        left: 0;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9;
+        overflow-y: auto; /* Tambahkan overflow-y untuk scroll pada navbar */
+        max-height: calc(100vh - 70px); /* Batasi tinggi maksimal untuk scroll */
+    }
+
+    .nav-links.show {
+        display: flex; /* Menampilkan menu saat kelas show ditambahkan */
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 60px 20px;
+        height: auto; /* Allow scrolling on mobile */
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px; /* Memberikan jarak bawah untuk memastikan teks tidak terlalu ke bawah */
+    }
+
+    .hero-image {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .animated-image {
+        max-width: 100%;
+        height: auto;
+        animation: none;
+    }
+
+    footer p {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-content {
+        margin-top: 20px; /* Menyesuaikan margin atas untuk memastikan teks tidak terlalu bawah */
+    }
+
+    .hero-image {
+        margin-top: 20px;
+        width: 100%;
+    }
+}

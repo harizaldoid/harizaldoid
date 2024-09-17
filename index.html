@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio Harizaldo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="https://profile-harizaldo.pages.dev">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I am Harizaldo <span class="wave">👋</span></h1>
+            <h2>Network Engineer</h2>
+            <p>✨ Saya adalah seorang mahasiswa di Institut Teknologi Tangerang Selatan, jurusan Teknologi Informasi. Di luar studi saya, saya aktif dalam Unit Kegiatan Mahasiswa Jaringan dan Server di ITTS.</p>
+        </div>
+        <div class="hero-image">
+            <img src="firewall.png" alt="Network Security Image" class="animated-image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Harizaldo.id</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
+
